@@ -43,4 +43,4 @@ while answer do
 	end
 
 end
-puts number
+puts number.to_i
