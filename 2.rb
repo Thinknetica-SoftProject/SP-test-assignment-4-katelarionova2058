@@ -17,7 +17,7 @@
 ## Решение
 
 require 'digest'
-input_string = gets.chop();
+input_string = gets.chomp();
 md5 = Digest::MD5.new
 
 i = 0;
