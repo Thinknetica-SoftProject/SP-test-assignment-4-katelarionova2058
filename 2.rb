@@ -14,30 +14,22 @@
 # - Результат (число) выводится через puts
 #
 #
-## Решение:
+## Решение
+
 require 'digest'
-input_str = gets.chop
-str_hash = ""
-n = 0
-number = 0
-answer = true
-help_md5 = Digest::MD5.new
+input_string = gets.chop();
+md5 = Digest::MD5.new
 
-while answer do
-	help_md5 << "#{n.to_s}"
-	help_str = help_md5.hexdigest
-	if help_str[0] == '0' && help_str[1] == '0' && help_str[2] == '0' && help_str[3] == '0' && help_str[4] == '0' then
-		#puts str_test
-		#puts str_hash
-		answer = false
-		#puts "//////////////////"
-		puts n
-	else
-		help_md5.reset
-		help_md5.update input_str
-		n+=1
+i = 0;
+loop do
+	md5 << "#{i.to_s}"
+	my_md = md5.hexdigest
+	if my_md[0..4] == "00000";
+		puts i
+		break
 	end
-
-
+	md5.reset
+	md5.update input_string
+	i += 1;
 end
 
