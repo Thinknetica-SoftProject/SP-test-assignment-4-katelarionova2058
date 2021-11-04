@@ -15,27 +15,29 @@
 #
 #
 ## Решение:
-
 require 'digest'
 input_str = gets.chop
 str_hash = ""
 n = 0
 number = 0
 answer = true
+help_md5 = Digest::MD5.new
+
 while answer do
-	number = n.to_s
-	str_test = ""
-	str_test = input_str + number
-	str_hash = Digest::MD5.hexdigest(str_test)
-	if str_hash[0] == '0' && str_hash[1] == '0' && str_hash[2] == '0' && str_hash[3] == '0' && str_hash[4] == '0' then
+	help_md5 << "#{n.to_s}"
+	help_str = help_md5.hexdigest
+	if help_str[0] == '0' && help_str[1] == '0' && help_str[2] == '0' && help_str[3] == '0' && help_str[4] == '0' then
 		#puts str_test
 		#puts str_hash
-		
 		answer = false
+		#puts "//////////////////"
+		puts n
 	else
+		help_md5.reset
+		help_md5.update input_str
 		n+=1
 	end
 
-puts number.to_i
+
 end
 
