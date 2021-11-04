@@ -31,6 +31,7 @@ while answer do
 		#puts str_test
 		#puts str_hash
 		answer = false
+                puts n
 	else
 		help_md5.reset
 		help_md5.update input_str
