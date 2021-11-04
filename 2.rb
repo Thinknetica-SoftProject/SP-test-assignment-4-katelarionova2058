@@ -26,13 +26,13 @@ str_hash = ""
 n = 0
 
 number = 0
-
+md5 = Digest::MD5.new
 answer = true
 while answer do
 	number = n.to_s
 	str_test = ""
 	str_test = input_str + number
-	str_hash = Digest::MD5.hexdigest(str_test)
+	str_hash = md5.hexdigest
 	if str_hash[0] == '0' && str_hash[1] == '0' && str_hash[2] == '0' && str_hash[3] == '0' && str_hash[4] == '0' then
 		#puts str_test
 		#puts str_hash
@@ -44,3 +44,4 @@ while answer do
 
 end
 puts number.to_i
+
