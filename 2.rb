@@ -16,3 +16,31 @@
 #
 ## Решение:
 
+require 'digest'
+input_str = gets
+
+input_str = input_str.chop
+
+str_hash = ""
+
+n = 0
+
+number = 0
+
+answer = true
+while answer do
+	number = n.to_s
+	str_test = ""
+	str_test = input_str + number
+	str_hash = Digest::MD5.hexdigest(str_test)
+	if str_hash[0] == '0' && str_hash[1] == '0' && str_hash[2] == '0' && str_hash[3] == '0' && str_hash[4] == '0' then
+		#puts str_test
+		#puts str_hash
+		
+		answer = false
+	else
+		n+=1
+	end
+
+end
+puts number

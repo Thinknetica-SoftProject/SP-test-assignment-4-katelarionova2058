@@ -15,5 +15,30 @@
 #
 #
 ## Решение:
+kod = 0
+file = File.open('./data/4.txt')
+answer_squere = 0
+IO.foreach(file) do |line|
+	mas = line.split("x").map {|n| n.to_i}
+	sortirovka = mas.sort
+	length = sortirovka[0]
+	width = sortirovka[1]
+	height = sortirovka[2]
+
+	answer = 2*length*width + 2*length*height + 2*width*height + length*width
+	answer_squere += answer
+
+
+
+
+	
+	
+
+
+
+	
+	
+end
+puts answer_squere
 
 

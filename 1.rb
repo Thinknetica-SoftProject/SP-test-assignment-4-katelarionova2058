@@ -15,7 +15,23 @@
 #
 #
 ## Решение:
+step_number = 0 #создаем переменную, чтобы обозначить номер этажа, по условию начинается с 0
 
+file = File.new("./data/1.txt","r:UTF-8") #читаем текстовый файл с исходными данными
+content = file.read # получаем все содержимое файла в одной длинной строке и записываем в переменную 
+
+#puts(content.count("()")) 
+count_of_simbol = content.count("()") #метод count считает поличество символов в строке, записываем это значение в переменную
+
+for i in (0...count_of_simbol) # 
+	if content[i] == "(" then
+		step_number += 1
+	else
+		step_number -= 1
+	end
+end
+
+puts step_number
 
 
 
